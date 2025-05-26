@@ -1,12 +1,12 @@
 import type {Metadata} from 'next';
-import { Inter } from 'next/font/google'; // Using Inter as a clean sans-serif
+import { Inter } from 'next/font/google';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster"; // Import Toaster
+import { Toaster } from "@/components/ui/toaster";
+import { MonopolyBoardProvider } from '@/context/MonopolyBoardContext'; // New import
 
-// Instantiate Inter font with a CSS variable
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter', // Define a CSS variable for Inter
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        {children}
+        <MonopolyBoardProvider> {/* Wrap with provider */}
+          {children}
+        </MonopolyBoardProvider>
         <Toaster />
       </body>
     </html>
