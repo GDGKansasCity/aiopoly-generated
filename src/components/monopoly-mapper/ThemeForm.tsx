@@ -54,7 +54,7 @@ export function ThemeForm({ onSubmit, isLoading }: ThemeFormProps) {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isLoading} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground">
+        <Button type="submit" disabled={isLoading} className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
